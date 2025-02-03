@@ -1,0 +1,632 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		<link rel="stylesheet" href="plugin/chalkboard/style.css">
+		<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<style>
+			.container{
+   				 display: flex;
+			}
+			.col{
+    			flex: 1;
+			}
+		</style>
+			<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<script src="plugin/menu/menu.js"></script>
+
+
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section>
+					<h3>Chaser-Runner games and \(\times\)-Homotopy</h3>
+					<h4>NSM Seminar 2025</h4>
+					<h4>
+						Oxford College of Emory University <a href="https://app.oxford.emory.edu/WebApps/Directory/index.cfm/view/9984" target="_blank">Tien Chih</a>
+					</h4>
+				</section>
+				<!--<section>
+					<div class="container">
+
+						<div class="col">
+							<img src="img/TienProfile.jpeg" width="100%">
+						</div>
+
+						<div class="col">
+							<ul>
+								<li class="fragment" style="font-size: 35px;">Grew up in Hilo, Hawaii.</li>
+								<li class="fragment" style="font-size: 35px;">Introduced to Math at UH-Hilo by Dr. Ramon Figueroa.</li>
+								<li class="fragment" style="font-size: 35px;">Currently Assistant Professor of Mathematics at MSU-Billings.</li>
+								<li class="fragment" style="font-size: 35px;">I love teaching, cooking, biking, spending time with my family, and MATH!</li>
+							</ul>	
+							
+						</div>
+
+					</div>
+
+
+				</section>-->
+				
+
+
+				<section>
+					
+					<section data-auto-animate>
+						<h3>What are <strong style="color:red;">Graphs</strong>?</h3>
+						
+						
+					</section>
+					
+					
+					
+					<section data-auto-animate>
+						<h3>What are <strong style="color:red;">Graphs</strong>?</h3>
+						<p>
+							A <strong style="color:red;">graph</strong> \(G\) is pair of sets \((V, E)\).
+							Where \(V\) is a set of <strong style="color:red;">vertices</strong>.
+							And \(E\) is a set of <strong style="color:red;">edges</strong> between vertices.
+						</p>
+						<p>
+							<img src="img/C4.svg" width="30%"><br> \(V=\{1,2,3,4\}, E=\{12, 23, 34, 14\}\)
+						</p>
+						
+					</section>
+					
+						
+				</section>	
+
+
+				<section>
+					
+					<section data-auto-animate>
+						<h3>The <q>Classic</q>	Chaser-Runner Game</h3>
+						
+						
+					</section>
+
+
+					
+					
+					
+					<section data-auto-animate>
+						<h3>The <q>Classic</q>	Chaser-Runner Game</h3>
+						<ol>
+							<li style="font-size: 35px;">
+								Start with a <strong style="color:red;">graph</strong>, a <strong style="color:blue;">chaser</strong> player, and a <strong style="color:green;">runner</strong> player.
+							</li>
+							<li style="font-size: 35px;">
+								The <strong style="color:blue;">chaser</strong> player places <strong style="color:blue;">chaser</strong>(s) on vertices of the graph.
+							</li>
+							<li style="font-size: 35px;">
+								The <strong style="color:green;">runner</strong> player places the <strong style="color:green;">runner</strong> on a vertex of the graph.
+							</li>
+						</ol>
+						
+					</section>
+
+					<section data-auto-animate>
+						<h3>The <q>Classic</q>	Chaser-Runner Game</h3>
+						<ol>
+							<li style="font-size: 20px;">
+								Start with a <strong style="color:red;">graph</strong>, a <strong style="color:blue;">chaser</strong> player, and a <strong style="color:green;">runner</strong> player.
+							</li>
+							<li style="font-size: 20px;">
+								The <strong style="color:blue;">chaser</strong> player places <strong style="color:blue;">chaser</strong>(s) on vertices of the graph.
+							</li>
+							<li style="font-size: 20px;">
+								The <strong style="color:green;">runner</strong> player places the <strong style="color:green;">runner</strong> on a vertex of the graph.
+							</li>
+						</ol>
+
+						<ol>
+							
+							<li style="font-size: 35px;">
+								Alternating taking turns, starting with the <strong style="color:blue;">chaser</strong> player.
+							</li>
+							<li style="font-size: 35px;">
+								On a players turn, for each piece they control, they may choose to keep them where they are, or move them to an adjacent vertex.
+							</li>
+							<li style="font-size: 35px;">
+								If a <strong style="color:blue;">chaser</strong> moves onto a <strong style="color:green;">runner</strong>, or vice versa, the <strong style="color:blue;">chaser</strong> wins.
+							</li>
+							<li style="font-size: 35px;">
+								The <strong style="color:green;">runner</strong> wins by having a strategy to indefinitely avoid the <strong style="color:blue;">chaser</strong>s.
+							</li>
+						</ol>
+						
+					</section>
+
+					<section data-auto-animate>
+						<h3>The <q>Classic</q>	Chaser-Runner Game</h3>
+						<ol>
+							<li style="font-size: 25px;">
+								Start with a <strong style="color:red;">graph</strong>, a <strong style="color:blue;">chaser</strong> player, and a <strong style="color:green;">runner</strong> player.
+							</li>
+							<li style="font-size: 25px;">
+								The <strong style="color:blue;">chaser</strong> player places <strong style="color:blue;">chaser</strong>(s) on vertices of the graph.
+							</li>
+							<li style="font-size: 25px;">
+								The <strong style="color:green;">runner</strong> player places the <strong style="color:green;">runner</strong> on a vertex of the graph.
+							</li>
+						</ol>
+
+						<ol>
+							
+							<li style="font-size: 25px;">
+								Alternating taking turns, starting with the <strong style="color:blue;">chaser</strong> player.
+							</li>
+							<li style="font-size: 25px;">
+								On a players turn, for each piece they control, they may choose to keep them where they are, or move them to an adjacent vertex.
+							</li>
+							<li style="font-size: 25px;">
+								If a <strong style="color:blue;">chaser</strong> moves onto a <strong style="color:green;">runner</strong>, or vice versa, the <strong style="color:blue;">chaser</strong> wins.
+							</li>
+							<li style="font-size: 25px;">
+								The <strong style="color:green;">runner</strong> wins by having a strategy to indefinitely avoid the <strong style="color:blue;">chaser</strong>s.
+							</li>
+						</ol>
+						<p style="font-size: 25px;" class="r-frame">
+							For each graph, what is the <strong>minimum</strong> number of chasers to ensure capture of the robber, assuming both players are playing optimally?
+						</p>
+						
+					</section>
+
+					<section data-auto-animate>
+						<h3>The <q>Classic</q>	Chaser-Runner Game</h3>
+						
+						<p style="font-size: 25px;" class="r-frame">
+							Given a graph \(G\), the <strong style="color:red;">chaser number</strong> of \(G\) denoted \(c(G)\) denotes the minimum number of chasers needed to ensure a winning strategy for the chaser player.
+						</p>
+
+						<div class="fragment">
+						<div class="container">
+
+						<div class="col" >
+							<ul>
+								<li style="font-size: 25px;">
+									\(c(K_2)=1\).
+								</li>
+								<li style="font-size: 25px;">
+									\(c(P_5)=1\).
+								</li>
+								<li style="font-size: 25px;">
+									\(c(T)=1\) for all <strong style="color:red;">trees</strong> \(T\).
+								</li>
+								
+							</ul>
+						</div>
+
+						<div class="col" >
+							<ul>
+								
+								<li style="font-size: 25px;">
+									\(c(C_n)=2\) for all <strong style="color:red;">cycles</strong> \(C_n, n\geq 3\).
+								</li>
+								<li style="font-size: 25px;">
+									\(c(K_n)=1\) for all <strong style="color:red;">complete graphs</strong> \(K_n, n\geq 3\).
+								</li>
+								<li style="font-size: 25px;">
+									\(c(K(5,2))=3\) (also called the Petersen Graph).
+								</li>
+							</ul>
+						</div>
+							
+							
+						</div>
+						</div>
+
+
+						
+					</section>
+
+
+					
+						
+				</section>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<section>
+					
+					<section data-auto-animate>
+						<h3>The <q>Sneaky Active</q>	Chaser-Runner Game</h3>
+						
+						
+					</section>
+
+
+					
+					
+					
+					<section data-auto-animate>
+						<h3>The <q>Sneaky Active</q>	Chaser-Runner Game</h3>
+						<ol>
+							<li style="font-size: 35px;">
+								Start with a <strong style="color:red;">graph</strong>, a <strong style="color:blue;">chaser</strong> player, and a <strong style="color:green;">runner</strong> player.
+							</li>
+							<li style="font-size: 35px;">
+								The <strong style="color:blue;">chaser</strong> player places <strong style="color:blue;">chaser</strong>(s) on vertices of the graph.
+							</li>
+							<li style="font-size: 35px;">
+								The <strong style="color:green;">runner</strong> player places the <strong style="color:green;">runner</strong> on a vertex of the graph.
+							</li>
+						</ol>
+						
+					</section>
+
+					<section data-auto-animate>
+						<h3>The <q>Sneaky Active</q>	Chaser-Runner Game</h3>
+						<ol>
+							<li style="font-size: 20px;">
+								Start with a <strong style="color:red;">graph</strong>, a <strong style="color:blue;">chaser</strong> player, and a <strong style="color:green;">runner</strong> player.
+							</li>
+							<li style="font-size: 20px;">
+								The <strong style="color:blue;">chaser</strong> player places <strong style="color:blue;">chaser</strong>(s) on vertices of the graph.
+							</li>
+							<li style="font-size: 20px;">
+								The <strong style="color:green;">runner</strong> player places the <strong style="color:green;">runner</strong> on a vertex of the graph.
+							</li>
+						</ol>
+
+						<ol>
+							
+							<li style="font-size: 35px;">
+								Alternating taking turns, starting with the <strong style="color:blue;">chaser</strong> player.
+							</li>
+							<li style="font-size: 35px;">
+								On a players turn, for each piece they control, they <strong>must</strong> move them to an adjacent vertex.
+							</li>
+							<li style="font-size: 35px;">
+								If a <strong style="color:blue;">chaser</strong> moves onto a <strong style="color:green;">runner</strong> the <strong style="color:blue;">chaser</strong> wins.  If a <strong style="color:green;">runner</strong> moves onto the <strong style="color:blue;">chaser</strong>, they are safe.
+							</li>
+							<li style="font-size: 35px;">
+								The <strong style="color:green;">runner</strong> wins by having a strategy to indefinitely avoid the <strong style="color:blue;">chaser</strong>s.
+							</li>
+						</ol>
+						
+					</section>
+
+					<section data-auto-animate>
+						<h3>The <q>Sneaky Active</q>	Chaser-Runner Game</h3>
+						<ol>
+							<li style="font-size: 25px;">
+								Start with a <strong style="color:red;">graph</strong>, a <strong style="color:blue;">chaser</strong> player, and a <strong style="color:green;">runner</strong> player.
+							</li>
+							<li style="font-size: 25px;">
+								The <strong style="color:blue;">chaser</strong> player places <strong style="color:blue;">chaser</strong>(s) on vertices of the graph.
+							</li>
+							<li style="font-size: 25px;">
+								The <strong style="color:green;">runner</strong> player places the <strong style="color:green;">runner</strong> on a vertex of the graph.
+							</li>
+						</ol>
+
+						<ol>
+							
+							<li style="font-size: 25px;">
+								Alternating taking turns, starting with the <strong style="color:blue;">chaser</strong> player.
+							</li>
+							<li style="font-size: 25px;">
+								On a players turn, for each piece they control, they <strong>must</strong> move them to an adjacent vertex.
+							</li>
+							<li style="font-size: 25px;">
+								If a <strong style="color:blue;">chaser</strong> moves onto a <strong style="color:green;">runner</strong> the <strong style="color:blue;">chaser</strong> wins.  If a <strong style="color:green;">runner</strong> moves onto the <strong style="color:blue;">chaser</strong>, they are safe.
+							</li>
+							<li style="font-size: 25px;">
+								The <strong style="color:green;">runner</strong> wins by having a strategy to indefinitely avoid the <strong style="color:blue;">chaser</strong>s.
+							</li>
+						</ol>
+						<p style="font-size: 25px;" class="r-frame">
+							For each graph, what is the <strong>minimum</strong> number of chasers to ensure capture of the robber, assuming both players are playing optimally?
+						</p>
+						
+					</section>
+
+					<section data-auto-animate>
+						<h3>The <q>Sneaky Active</q>	Chaser-Runner Game</h3>
+						
+						<p style="font-size: 25px;" class="r-frame">
+							Given a graph \(G\), the <strong style="color:red;">sneaky active chaser number</strong> of \(G\) denoted \(c_{SA}(G)\) denotes the minimum number of chasers needed to ensure a winning strategy for the chaser player.
+						</p>
+
+						<div class="fragment">
+						<div class="container">
+
+						<div class="col" >
+							<ul>
+								<li style="font-size: 25px;">
+									\(c_{SA}(K_2)=2\).
+								</li>
+								<li style="font-size: 25px;">
+									\(c_{SA}(T)=2\) for all <strong style="color:red;">trees</strong> \(T\).
+								</li>
+								<li style="font-size: 25px;">
+									\(c_{SA}(C_4)=2\).
+								</li>
+								
+								
+								
+							</ul>
+						</div>
+
+						<div class="col" >
+							<ul>
+								
+								<li style="font-size: 25px;">
+									\(c_{SA}(C_{2k+1})=2\) for all \(k\geq 1\).
+								</li>
+								<li style="font-size: 25px;">
+									\(c_{SA}(C_{2k})=4\) for all \(k\geq 3\).
+								</li>
+								<li style="font-size: 25px;">
+									\(c_{SA}(K_n)=2\) for all \(n\geq 3\).
+								</li>
+							</ul>
+						</div>
+							
+							
+						</div>
+						</div>
+
+
+
+
+						
+					</section>
+
+
+					
+						
+				</section>	
+
+
+
+
+
+				<section>
+					<section data-auto-animate>
+						
+						<p style="font-size: 35px;" >
+							For each graph, draw a loop on each vertex so that each vertex is adjacent to itself.  How does the classic game compare to the sneaky active game?
+						</p>
+
+						<div class="fragment">
+							<p style="font-size: 35px;" class="r-frame">
+								<strong>Proposition</strong> (C, Scull) For a reflexive graph \(G\), Sneaky-Active CR is equivalent to Classic CR.
+							</p>
+						</div>
+
+						
+
+
+
+
+						
+					</section>
+
+					<section data-auto-animate>
+						
+						<p style="font-size: 35px;" >
+							On any graph pick a vertex \(v\), draw a new vertex \(w\) and connect it to some of the neighbors of \(v\).
+						</p>
+						<p style="font-size: 35px;" class="fragment">
+							Is there any reason for the <strong style="color:green;">runner</strong> to move to \(w\) instead of \(v\)?  What about a <strong style="color:blue;">chaser</strong>?
+						</p>
+
+						<div class="fragment">
+							<p style="font-size: 35px;" class="r-frame" >
+								<strong>Theorem</strong> (C, Scull) sneaky-active chaser number is a \(\times-\)homotopy invariant.
+							</p>
+						</div>
+
+						
+
+
+
+
+						
+					</section>
+					<section data-auto-animate>
+						
+						<div class="container">
+
+						
+							
+						<div class="col" data-id="Graph">
+							<p >In <strong style="color:red;">Graph Theory</strong>, the product is the <strong style="color:red;">product graph</strong>.</p>
+							<img src="img/graphprod.svg" width="35%">
+						</div>
+
+							
+							
+						</div>
+						
+						<p >
+							The <strong style="color:red;">Graph Product</strong> \(G\times H\) is the cartesian products of the vertices of  \(G, H\) where \((v_1, w_1)\sim (v_2, w_2)\) whenever \(v_1\sim w_2\) and \(v_2\sim w_1\).
+						</p>
+
+						
+						
+					</section>
+
+					<section data-auto-animate>
+						
+						<div class="container">
+
+						
+							
+						<div class="col" data-id="Graph" style="font-size: 15px;" >
+							<p >In <strong style="color:red;">Graph Theory</strong>, the product is the <strong style="color:red;">product graph</strong>.</p>
+							<img src="img/graphprod.svg" width="20%">
+						</div>
+
+							
+							
+						</div>
+						
+						<p style="font-size: 15px;" >
+							The <strong style="color:red;">Graph Product</strong> \(G\times H\) is the cartesian products of the vertices of  \(G, H\) where \((v_1, w_1)\sim (v_2, w_2)\) whenever \(v_1\sim w_2\) and \(v_2\sim w_1\).
+						</p>
+						<div  class="r-frame">
+							<p style="font-size: 30px;">
+								<strong>Theorem</strong> (C,Scull) \[c_{SA}(X\times Y)= \ldots \]
+
+							</p>
+							<ul>
+								<li style="font-size: 30px;">
+									\( c_{SA}(X)+c_{SA}(Y)-1\) if \(X, Y\) are not bipartite.
+								</li>
+								<li style="font-size: 30px;">
+									\( 2c_{SA}(Y)+c_{SA}(Y)-2\) if \(X\) is not bipartite, but \(Y\) is.
+								</li>
+								<li style="font-size: 30px;">
+									\( 2c_{SA}(X)+2c_{SA}(Y)-4\) if \(X, Y\) are both bipartite.
+								</li>
+							</ul>
+						</div>
+
+						
+						
+					</section>
+					
+				</section>
+
+
+
+
+				
+				<section>
+					<h3>Other Results and Future Work</h3>
+				</section>
+
+
+
+
+				
+		
+		<section>
+		<h2>Thank you!</h2>
+			<img src="img/spiderjump.gif" width="80%" data-id="Null">
+		<h3>Any Questions?</h3>	
+		</section>
+			
+		
+				
+				
+				
+					
+				
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+		<script src="plugin/math/math.js"></script>
+		<script src="plugin/chalkboard/plugin.js"></script>
+		<script src="plugin/customcontrols/plugin.js"></script>
+
+
+
+	<script>
+  	Reveal.initialize({
+		math: {
+			mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+			config: 'TeX-AMS_HTML-full',
+			// pass other options into `MathJax.Hub.Config()`
+			TeX: { Macros: { RR: "{\\bf R}" } }
+		},
+
+		chalkboard: {
+        boardmarkerWidth: 3,
+        chalkWidth: 7,
+        chalkEffect: 1.0,
+        storage: null,
+        src: null,
+        readOnly: undefined,
+        transition: 800,
+        theme: "chalkboard",
+        background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ],
+        grid: { color: 'rgb(50,50,10,0.5)', distance: 80, width: 2},
+        eraser: { src: path + 'img/sponge.png', radius: 20},
+        boardmarkers : [
+                { color: 'rgba(100,100,100,1)', cursor: 'url(' + path + 'img/boardmarker-black.png), auto'},
+                { color: 'rgba(30,144,255, 1)', cursor: 'url(' + path + 'img/boardmarker-blue.png), auto'},
+                { color: 'rgba(220,20,60,1)', cursor: 'url(' + path + 'img/boardmarker-red.png), auto'},
+                { color: 'rgba(50,205,50,1)', cursor: 'url(' + path + 'img/boardmarker-green.png), auto'},
+                { color: 'rgba(255,140,0,1)', cursor: 'url(' + path + 'img/boardmarker-orange.png), auto'},
+                { color: 'rgba(150,0,20150,1)', cursor: 'url(' + path + 'img/boardmarker-purple.png), auto'},
+                { color: 'rgba(255,220,0,1)', cursor: 'url(' + path + 'img/boardmarker-yellow.png), auto'}
+        ],
+        chalks: [
+                { color: 'rgba(255,255,255,0.5)', cursor: 'url(' + path + 'img/chalk-white.png), auto'},
+                { color: 'rgba(96, 154, 244, 0.5)', cursor: 'url(' + path + 'img/chalk-blue.png), auto'},
+                { color: 'rgba(237, 20, 28, 0.5)', cursor: 'url(' + path + 'img/chalk-red.png), auto'},
+                { color: 'rgba(20, 237, 28, 0.5)', cursor: 'url(' + path + 'img/chalk-green.png), auto'},
+                { color: 'rgba(220, 133, 41, 0.5)', cursor: 'url(' + path + 'img/chalk-orange.png), auto'},
+                { color: 'rgba(220,0,220,0.5)', cursor: 'url(' + path + 'img/chalk-purple.png), auto'},
+                { color: 'rgba(255,220,0,0.5)', cursor: 'url(' + path + 'img/chalk-yellow.png), auto'}
+        ]
+    },
+    customcontrols: {
+  		controls: [
+  			{ icon: '<i class="fa fa-pen-square"></i>',
+  			  title: 'Toggle chalkboard (B)',
+  			  action: 'RevealChalkboard.toggleChalkboard();'
+  			},
+  			{ icon: '<i class="fa fa-pen"></i>',
+  			  title: 'Toggle notes canvas (C)',
+  			  action: 'RevealChalkboard.toggleNotesCanvas();'
+  			}
+  		]
+    },
+
+		plugins: [ RevealMath, RevealChalkboard, RevealCustomControls, RevealMenu  ]
+		});
+	</script>
+
+	</body>
+</html>
